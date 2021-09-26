@@ -1,11 +1,13 @@
 import * as sst from "@serverless-stack/resources";
 
-export default class MyStack extends sst.Stack {
+export default class ApiStack extends sst.Stack {
+  api: sst.Api
+
   constructor(scope: sst.App, id: string, props?: sst.StackProps) {
     super(scope, id, props);
 
     // Create a HTTP API
-    const api = new sst.Api(this, "Api", {
+    this.api = new sst.Api(this, "Api", {
       routes: {
         "GET /": "src/lambda.handler",
       },
@@ -13,7 +15,7 @@ export default class MyStack extends sst.Stack {
 
     // Show the endpoint in the output
     this.addOutputs({
-      "ApiEndpoint": api.url,
+      "ApiEndpoint": this.api.url,
     });
   }
 }

@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.114.0",
-    "@types/aws-lambda": "^8.10.70"
+    "@types/aws-lambda": "^8.10.70",
+    "prettier": "2.4.1"
   },
   "dependencies": {
     "@aws-cdk/core": "1.114.0",
