@@ -1,7 +1,7 @@
 import * as sst from "@serverless-stack/resources";
 
 export default class ApiStack extends sst.Stack {
-  api: sst.Api
+  api: sst.Api;
 
   constructor(scope: sst.App, id: string, props?: sst.StackProps) {
     super(scope, id, props);
@@ -15,7 +15,7 @@ export default class ApiStack extends sst.Stack {
 
     // Show the endpoint in the output
     this.addOutputs({
-      "ApiEndpoint": this.api.url,
+      ApiEndpoint: this.api.url,
     });
   }
 }

@@ -19,5 +19,5 @@
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["lib","src", "./typings-custom/**/*.ts"]
+  "include": ["lib", "src", "./typings-custom/**/*.ts"]
 }

@@ -1,5 +1,5 @@
-import React, {FC} from "react"
-import {Link} from "react-router-dom";
+import React, { FC } from "react";
+import { Link } from "react-router-dom";
 
 export const NavMenu: FC = () => (
   <nav>
@@ -11,4 +11,4 @@ export const NavMenu: FC = () => (
       </li>
     </ul>
   </nav>
-)
+);

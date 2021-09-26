@@ -1,11 +1,6 @@
-import React, {FC} from "react"
+import React, { FC } from "react";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { RandomSpinnerPage } from "./pages/RandomSpinnerPage";
 import { SpinnerPage } from "./pages/SpinnerPage";
@@ -31,4 +26,4 @@ export const AppRouter: FC = () => (
       </Route>
     </Switch>
   </Router>
-)
+);

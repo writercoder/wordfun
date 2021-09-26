@@ -1,5 +1,6 @@
-import * as unicodeEmoji from 'unicode-emoji';
+import * as unicodeEmoji from "unicode-emoji";
 
-const emojis = unicodeEmoji.getEmojis()
+const emojis = unicodeEmoji.getEmojis();
 
-export const randomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)]
+export const randomEmoji = () =>
+  emojis[Math.floor(Math.random() * emojis.length)];

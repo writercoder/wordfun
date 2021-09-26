@@ -1,5 +1,5 @@
 import { APIGatewayProxyEventV2, APIGatewayProxyHandlerV2 } from "aws-lambda";
-import * as words from "an-array-of-english-words"
+import * as words from "an-array-of-english-words";
 
 export const handler: APIGatewayProxyHandlerV2 = async (
   event: APIGatewayProxyEventV2
@@ -8,6 +8,6 @@ export const handler: APIGatewayProxyHandlerV2 = async (
   return {
     statusCode: 200,
     headers: { "Content-Type": "text/plain" },
-    body: `The random word is ${randomWord}. Generated at ${event.requestContext.time}`
+    body: `The random word is ${randomWord}. Generated at ${event.requestContext.time}`,
   };
 };
