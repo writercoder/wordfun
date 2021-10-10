@@ -1,16 +1,18 @@
-import React, {FC} from 'react'
-import {Box, Square, Text} from "@chakra-ui/react";
-import {randomHex} from "../domain/sources/color";
-import {SpinnerComponent} from "./types";
+import React from "react";
+import { Square, Text } from "@chakra-ui/react";
+import { randomHex } from "../domain/sources/color";
+import { Spinner } from "../domain/spinners/types";
+import { SimpleSeed } from "../domain/spinners/seeds";
 
-export const RandomColour: SpinnerComponent = () => {
-  const colour = randomHex()
+export const RandomColour: Spinner<SimpleSeed> = ({ seed }) => {
+  const colour = seed.value;
   return (
     <>
       <Square bg={colour} size="xl"></Square>
       <Text align="center">{colour}</Text>
     </>
-  )
-}
+  );
+};
 
-RandomColour.title = "Random colour"
+RandomColour.title = "Random colour";
+RandomColour.generateSeed = SimpleSeed.generator(randomHex);

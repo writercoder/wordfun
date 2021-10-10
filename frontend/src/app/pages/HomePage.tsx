@@ -1,12 +1,19 @@
 import React, { FC } from "react";
 import { Layout } from "../ui/Layout";
-import {Link as RouteLink} from "react-router-dom"
-import {Box, Button, Center, Heading, HStack, Link, SimpleGrid, Text, VStack} from "@chakra-ui/react";
+import { Link as RouteLink } from "react-router-dom";
+import {
+  Button,
+  Center,
+  Heading,
+  Link,
+  SimpleGrid,
+  VStack,
+} from "@chakra-ui/react";
 
 export const HomePage: FC = () => (
   <Layout>
     <VStack spacing={10}>
-        <Heading>Writing prompts</Heading>
+      <Heading>Writing prompts</Heading>
       <SimpleGrid spacing={10} columns={2}>
         <Center>
           <RouteLink to="/spinners/random">

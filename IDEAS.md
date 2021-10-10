@@ -1,6 +1,6 @@
 # Prompt ideas
 
-- Random first sentance. (From list, ML generated.)
+- Random first sentence. (From list, ML generated.)
 - Random color
 - Two random colors
 - Three random colours
@@ -11,3 +11,11 @@
 - Random abstract noun
 - Random verb
 - Random adjective
+- Random reddit comment / thread
+- Random tweet
+- Random facebook post
+- Random google / apple / OSM location
+
+# Word stuff from here
+
+https://github.com/spencermountain/compromise/tree/master/data

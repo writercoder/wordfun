@@ -1,33 +1,36 @@
-import React, { FC, useEffect, useState } from "react";
-import useAsyncEffect from "use-async-effect";
-import {SpinnerComponent} from "./types";
+import React from "react";
+import { Spinner } from "../domain/spinners/types";
+import { SimpleSeed } from "../domain/spinners/seeds";
+import { sample } from "lodash";
 
-export const RandomWord: SpinnerComponent = () => {
-  const [word, setWord] = useState<string | undefined>();
-  const [loadData, setLoadData] = useState<boolean>(true);
+export const RandomWord: Spinner<SimpleSeed> = ({ seed }) => {
+  //
+  const word = seed.value;
 
-  useAsyncEffect(
-    async (isMounted) => {
-      if (!loadData) {
-        return;
-      }
-      setLoadData(false);
-      const response = await fetch(process.env.REACT_APP_API_URL as string);
-      const data = await response.json();
-
-      if (isMounted()) {
-        setWord(data.word);
-      }
-    },
-    [loadData]
-  );
+  // useAsyncEffect(
+  //   async (isMounted) => {
+  //     if (!loadData) {
+  //       return;
+  //     }
+  //     setLoadData(false);
+  //     const response = await fetch(process.env.REACT_APP_API_URL as string);
+  //     const data = await response.json();
+  //
+  //     if (isMounted()) {
+  //       setWord(data.word);
+  //     }
+  //   },
+  //   [loadData]
+  // );
 
   return (
     <>
       <div>{word}</div>
-      <button onClick={() => setLoadData(true)}>Random word</button>
     </>
   );
 };
 
-RandomWord.title = "Random word"
+RandomWord.title = "Random word";
+RandomWord.generateSeed = SimpleSeed.generator(
+  () => sample(["Drink", "Arse", "Feck", "Girls"]) as string
+);
